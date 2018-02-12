@@ -54,7 +54,6 @@ fi
 ORACLE_HOME="${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}"
 
 cd ${ORACLE_HOME}
-ln -s libclntsh.so.12.1 libclntsh.so
 
 indent "Create oci8.pc"
 cat <<EOF > ${ORACLE_HOME}/oci8.pc
