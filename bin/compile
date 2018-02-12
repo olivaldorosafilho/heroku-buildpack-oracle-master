@@ -81,6 +81,7 @@ cat <<EOF > ${BUILD_DIR}/.profile.d/oracle.sh
   export TNS_ADMIN=${ORACLE_HOME}/network/admin
 	export PKG_CONFIG_PATH=${ORACLE_HOME}
 EOF
+export PKG_CONFIG_PATH=${ORACLE_HOME}
 
 source ${BUILD_DIR}/.profile.d/oracle.sh
 
