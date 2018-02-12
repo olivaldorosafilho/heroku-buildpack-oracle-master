@@ -24,36 +24,36 @@ puts-step "Found an .oracle.yml"
 indent "Making directory ${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}"
 mkdir -p ${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}
 
-indent "Extracting $BASIC_FILENAME..."
-unzip $(pwd)/$ORACLE_FILE_NAME -d ${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}
+#indent "Extracting $BASIC_FILENAME..."
+#unzip $(pwd)/$ORACLE_FILE_NAME -d ${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}
 
-# indent "Downloading and extracting ${ORACLE_INSTANT_CLIENT_FILENAME}"
-# curl ${ORACLE_INSTANT_CLIENT_URL} -L -s -o - | tar -xz -C \
-# 	${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR} -f -
+indent "Downloading and extracting ${ORACLE_INSTANT_CLIENT_FILENAME}"
+curl ${ORACLE_INSTANT_CLIENT_URL} -L -s -o - | tar -xz -C \
+	${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR} -f -
 
-# if [[ $? != 0 ]]; then
-#   indent "Failure while downloading Oracle instant client archive"
-#   exit 1
-# fi
+if [[ $? != 0 ]]; then
+  indent "Failure while downloading Oracle instant client archive"
+  exit 1
+fi
 
-# indent "Successfully extracted ${ORACLE_INSTANT_CLIENT_FILENAME}"
+indent "Successfully extracted ${ORACLE_INSTANT_CLIENT_FILENAME}"
 
-# ORACLE_NETWORK_ADMIN_DIR="${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}/network/admin"
-# mkdir -p ${ORACLE_NETWORK_ADMIN_DIR}
+ORACLE_NETWORK_ADMIN_DIR="${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}/network/admin"
+mkdir -p ${ORACLE_NETWORK_ADMIN_DIR}
 
-# if [[ -s $ORACLE_CONFIG ]]; then
-#   TNSNAMES_FILENAME=$(grep tnsnames.ora $ORACLE_CONFIG | cut -d' ' -f2)
-#   if [[ -f $BUILD_DIR/$TNSNAMES_FILENAME ]]; then
-#     indent "Symlinking ${TNSNAMES_FILENAME} to ${ORACLE_INSTANT_CLIENT_DIR}/network/admin/tnsnames.ora"
-#     ln -sf $BUILD_DIR/$TNSNAMES_FILENAME ${ORACLE_NETWORK_ADMIN_DIR}/tnsnames.ora
-#   fi
+if [[ -s $ORACLE_CONFIG ]]; then
+  TNSNAMES_FILENAME=$(grep tnsnames.ora $ORACLE_CONFIG | cut -d' ' -f2)
+  if [[ -f $BUILD_DIR/$TNSNAMES_FILENAME ]]; then
+    indent "Symlinking ${TNSNAMES_FILENAME} to ${ORACLE_INSTANT_CLIENT_DIR}/network/admin/tnsnames.ora"
+    ln -sf $BUILD_DIR/$TNSNAMES_FILENAME ${ORACLE_NETWORK_ADMIN_DIR}/tnsnames.ora
+  fi
 
-#   SQLNET_FILENAME=$(grep sqlnet.ora $ORACLE_CONFIG | cut -d' ' -f2)
-#   if [[ -f $BUILD_DIR/$SQLNET_FILENAME ]]; then
-#     indent "Symlinking ${SQLNET_FILENAME} to ${ORACLE_INSTANT_CLIENT_DIR}/network/admin/sqlnet.ora"
-#     ln -sf $BUILD_DIR/$SQLNET_FILENAME ${ORACLE_NETWORK_ADMIN_DIR}/sqlnet.ora
-#   fi
-# fi
+  SQLNET_FILENAME=$(grep sqlnet.ora $ORACLE_CONFIG | cut -d' ' -f2)
+  if [[ -f $BUILD_DIR/$SQLNET_FILENAME ]]; then
+    indent "Symlinking ${SQLNET_FILENAME} to ${ORACLE_INSTANT_CLIENT_DIR}/network/admin/sqlnet.ora"
+    ln -sf $BUILD_DIR/$SQLNET_FILENAME ${ORACLE_NETWORK_ADMIN_DIR}/sqlnet.ora
+  fi
+fi
 
 ORACLE_HOME="${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}"
 
