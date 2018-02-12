@@ -81,7 +81,13 @@ cat <<EOF > ${BUILD_DIR}/.profile.d/oracle.sh
   export TNS_ADMIN=${ORACLE_HOME}/network/admin
 	export PKG_CONFIG_PATH=${ORACLE_HOME}
 EOF
-
+export OCI_LIB_DIR=${ORACLE_HOME}
+export ORACLE_HOME=${ORACLE_HOME}
+export OCI_INC_DIR=${ORACLE_HOME}/sdk/include
+export LD_LIBRARY_PATH=${ORACLE_HOME}:\$LD_LIBRARY_PATH}
+export PATH=${ORACLE_HOME}:\$PATH
+export TNS_ADMIN=${ORACLE_HOME}/network/admin
+export PKG_CONFIG_PATH=${ORACLE_HOME}
 export PKG_CONFIG_PATH=${ORACLE_HOME}
 
 source ${BUILD_DIR}/.profile.d/oracle.sh
