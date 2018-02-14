@@ -69,9 +69,9 @@ indent "Create oci8.pc"
 mkdir -p "/usr"
 mkdir -p "/usr/local"
 mkdir -p "/usr/local/share"
-mkdir -p "/usr/local/share/pkgconfig"
-#mkdir -p ${PKG_CONFIG_PATH}
-#mkdir -p ${PKG_CONFIG_PATH_II}
+mkdir -p "/usr/pkgconfig"
+mkdir -p ${PKG_CONFIG_PATH}
+mkdir -p ${PKG_CONFIG_PATH_II}
 
 cat <<EOF > ${ORACLE_HOME}/oci8.pc
 # Package Information for pkg-config
