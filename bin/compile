@@ -15,7 +15,8 @@ ORACLE_CONFIG="${BUILD_DIR}/.oracle.yml"
 ORACLE_INSTANT_CLIENT_DIR="vendor/oracle_instantclient"
 #ORACLE_INSTANT_CLIENT_URL="http://buildpacks.teresa-apps.io/oracle/oracle-instantclient-full-12.1-linux.x64.tar.gz"
 #ORACLE_INSTANT_CLIENT_FILENAME=$(echo $ORACLE_INSTANT_CLIENT_URL | cut -d/ -f5)
-ORACLE_INSTANT_CLIENT_URL="https://encodable.com/uploaddemo/files/instantclient.tar.gz"
+#ORACLE_INSTANT_CLIENT_URL="https://encodable.com/uploaddemo/files/instantclient.tar.gz"
+ORACLE_INSTANT_CLIENT_URL="http://buildpacks.teresa-apps.io/oracle/instantclient-go.tar.gz"
 ORACLE_INSTANT_CLIENT_FILENAME="instantclient.tar.gz"
 PKG_CONFIG_PATH="/usr/local/share/pkgconfig"
 #teste
