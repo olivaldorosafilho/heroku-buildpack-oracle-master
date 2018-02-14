@@ -64,7 +64,7 @@ ORACLE_HOME="${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}"
 #ln -s libclntsh.so.12.1 libclntsh.so
 
 indent "Create oci8.pc"
-mikdir -p PKG_CONFIG_PATH
+mkdir -p ${PKG_CONFIG_PATH}
 
 cat <<EOF > ${ORACLE_HOME}/oci8.pc
 # Package Information for pkg-config
