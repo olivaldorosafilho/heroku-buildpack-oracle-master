@@ -73,7 +73,7 @@ indent "Create oci8.pc"
 cd ${ORACLE_HOME}
 echo '# Package Information for pkg-config
 
-prefix=${ORACLE_HOME}
+prefix=/tmp/build/vendor/instantclient
 libdir=${prefix}
 includedir=${prefix}/sdk/include/
 
