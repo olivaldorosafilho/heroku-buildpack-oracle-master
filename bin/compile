@@ -85,6 +85,20 @@ Libs.private:
 Cflags: -I${includedir}
 EOF
 
+cd ${ORACLE_HOME}
+echo '# Package Information for pkg-config
+
+prefix=/opt/oracle/instantclient
+libdir=${prefix}
+includedir=${prefix}/sdk/include/
+
+Name: OCI
+Description: Oracle database engine
+Version: 11.2
+Libs: -L${libdir} -lclntsh
+Libs.private:
+Cflags: -I${includedir}'> oci8.pc
+
 #cp ${ORACLE_HOME}/oci8.pc ${PKG_CONFIG_PATH}
 #cp ${ORACLE_HOME}/oci8.pc ${PKG_CONFIG_PATH_II}
 
