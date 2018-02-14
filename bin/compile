@@ -14,7 +14,7 @@ BIN_DIR=$(cd "$(dirname "$0")"; pwd) # absolute path
 ORACLE_CONFIG="${BUILD_DIR}/.oracle.yml"
 ORACLE_INSTANT_CLIENT_DIR="vendor/oracle_instantclient"
 #ORACLE_INSTANT_CLIENT_URL="http://buildpacks.teresa-apps.io/oracle/oracle-instantclient-full-12.1-linux.x64.tar.gz"
-ORACLE_INSTANT_CLIENT_URL="https://github.com/olivaldorosafilho/heroku-buildpack-oracle-master/blob/master/instantclient.tar.gz"
+ORACLE_INSTANT_CLIENT_URL="https://encodable.com/cgi-bin/filechucker.cgi?action=landing&path=/&file=instantclient.tar.gz"
 ORACLE_INSTANT_CLIENT_FILENAME=$(echo $ORACLE_INSTANT_CLIENT_URL | cut -d/ -f5)
 
 source "$BIN_DIR/utils"
