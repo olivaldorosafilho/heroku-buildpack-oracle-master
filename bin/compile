@@ -18,8 +18,8 @@ ORACLE_INSTANT_CLIENT_DIR="vendor/oracle_instantclient"
 #ORACLE_INSTANT_CLIENT_URL="https://encodable.com/uploaddemo/files/instantclient.tar.gz"
 ORACLE_INSTANT_CLIENT_URL="http://buildpacks.teresa-apps.io/oracle/instantclient-go.tar.gz"
 ORACLE_INSTANT_CLIENT_FILENAME="instantclient.tar.gz"
-PKG_CONFIG_PATH="/usr/local/share/pkgconfig"
-PKG_CONFIG_PATH_II="/usr/share/pkgconfig"
+PKG_CONFIG_PATH="/usr/pkgconfig"
+
 #teste
 source "$BIN_DIR/utils"
 
