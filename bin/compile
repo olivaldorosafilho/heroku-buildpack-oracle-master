@@ -66,12 +66,6 @@ ORACLE_HOME="${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}"
 #ln -s libclntsh.so.12.1 libclntsh.so
 
 indent "Create oci8.pc"
-mkdir -p "/usr"
-mkdir -p "/usr/local"
-mkdir -p "/usr/local/share"
-mkdir -p "/usr/pkgconfig"
-mkdir -p ${PKG_CONFIG_PATH}
-mkdir -p ${PKG_CONFIG_PATH_II}
 
 cat <<EOF > ${ORACLE_HOME}/oci8.pc
 # Package Information for pkg-config
@@ -88,8 +82,8 @@ Libs.private:
 Cflags: -I\${includedir}
 EOF
 
-cp ${ORACLE_HOME}/oci8.pc ${PKG_CONFIG_PATH}
-cp ${ORACLE_HOME}/oci8.pc ${PKG_CONFIG_PATH_II}
+#cp ${ORACLE_HOME}/oci8.pc ${PKG_CONFIG_PATH}
+#cp ${ORACLE_HOME}/oci8.pc ${PKG_CONFIG_PATH_II}
 
 indent "Create profile.d script"
 mkdir -p ${BUILD_DIR}/.profile.d
