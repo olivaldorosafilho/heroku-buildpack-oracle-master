@@ -15,7 +15,8 @@ ORACLE_CONFIG="${BUILD_DIR}/.oracle.yml"
 ORACLE_INSTANT_CLIENT_DIR="vendor/oracle_instantclient"
 #ORACLE_INSTANT_CLIENT_URL="http://buildpacks.teresa-apps.io/oracle/oracle-instantclient-full-12.1-linux.x64.tar.gz"
 ORACLE_INSTANT_CLIENT_URL="https://encodable.com/uploaddemo/files/instantclient.tar.gz"
-ORACLE_INSTANT_CLIENT_FILENAME=$(echo $ORACLE_INSTANT_CLIENT_URL | cut -d/ -f5)
+#ORACLE_INSTANT_CLIENT_FILENAME=$(echo $ORACLE_INSTANT_CLIENT_URL | cut -d/ -f5)
+ORACLE_INSTANT_CLIENT_FILENAME="instantclient.tar.gz"
 #teste
 source "$BIN_DIR/utils"
 
@@ -57,9 +58,9 @@ fi
 
 ORACLE_HOME="${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}"
 
-cd ${ORACLE_HOME}
-rm libclntsh.so
-ln -s libclntsh.so.12.1 libclntsh.so
+#cd ${ORACLE_HOME}
+#rm libclntsh.so
+#ln -s libclntsh.so.12.1 libclntsh.so
 
 indent "Create oci8.pc"
 cat <<EOF > ${ORACLE_HOME}/oci8.pc
