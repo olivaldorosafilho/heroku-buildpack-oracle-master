@@ -19,6 +19,7 @@ ORACLE_INSTANT_CLIENT_DIR="vendor/oracle_instantclient"
 ORACLE_INSTANT_CLIENT_URL="http://buildpacks.teresa-apps.io/oracle/instantclient-go.tar.gz"
 ORACLE_INSTANT_CLIENT_FILENAME="instantclient.tar.gz"
 PKG_CONFIG_PATH="/usr/local/share/pkgconfig"
+PKG_CONFIG_PATH_II="/usr/share/pkgconfig"
 #teste
 source "$BIN_DIR/utils"
 
@@ -82,7 +83,8 @@ Libs.private:
 Cflags: -I\${includedir}
 EOF
 
-cp ${ORACLE_HOME}/oci8.pc PKG_CONFIG_PATH
+cp ${ORACLE_HOME}/oci8.pc ${PKG_CONFIG_PATH}
+cp ${ORACLE_HOME}/oci8.pc ${PKG_CONFIG_PATH_II}
 
 indent "Create profile.d script"
 mkdir -p ${BUILD_DIR}/.profile.d
