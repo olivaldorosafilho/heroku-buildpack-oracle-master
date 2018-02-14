@@ -88,7 +88,7 @@ EOF
 cd ${ORACLE_HOME}
 echo '# Package Information for pkg-config
 
-prefix=/opt/oracle/instantclient
+prefix=${ORACLE_HOME}
 libdir=${prefix}
 includedir=${prefix}/sdk/include/
 
