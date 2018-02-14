@@ -74,15 +74,15 @@ cat <<EOF > ${ORACLE_HOME}/oci8.pc
 # Package Information for pkg-config
 
 prefix=${ORACLE_HOME}
-libdir=\${prefix}
-includedir=\${prefix}/sdk/include/
+libdir=${prefix}
+includedir=${prefix}/sdk/include/
 
 Name: OCI
 Description: Oracle database engine
 Version: 11.2
-Libs: -L\${libdir} -lclntsh
+Libs: -L${libdir} -lclntsh
 Libs.private:
-Cflags: -I\${includedir}
+Cflags: -I${includedir}
 EOF
 
 #cp ${ORACLE_HOME}/oci8.pc ${PKG_CONFIG_PATH}
