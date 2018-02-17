@@ -99,5 +99,8 @@ indent "Save build LD_LIBRARY_PATH to ENV_DIR"
 indent echo $PKG_CONFIG_PATH
 LD_LIBRARY_PATH_FILE="$ENV_DIR/LD_LIBRARY_PATH"
 echo $ORACLE_HOME >> $LD_LIBRARY_PATH_FILE
+#sh -c echo $ORACLE_HOME >> $LD_LIBRARY_PATH_FILE/oracle-instantclient.conf
+sh -c echo "$ORACLE_HOME > /etc/ld.so.conf.d/oracle-instantclient.conf"
+ldconfig
 
 indent "Done!"
