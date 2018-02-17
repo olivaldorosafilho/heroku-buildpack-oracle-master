@@ -28,6 +28,7 @@ puts-step "Found an .oracle.yml"
 
 indent "Making directory ${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}"
 mkdir -p ${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}
+chmod 777 ${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}
 
 #indent "Extracting $BASIC_FILENAME..."
 #unzip $(pwd)/$ORACLE_FILE_NAME -d ${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}
