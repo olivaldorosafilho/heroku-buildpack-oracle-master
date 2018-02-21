@@ -37,7 +37,7 @@ mkdir -p ${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}
 
 indent "Downloading and extracting ${ORACLE_INSTANT_CLIENT_FILENAME}"
 curl ${ORACLE_INSTANT_CLIENT_URL} -L -s -o - | tar -xz -C \
-	${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR} -f -
+	${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR_DOWNLOAD} -f -
 
 if [[ $? != 0 ]]; then
   indent "Failure while downloading Oracle instant client archive"
