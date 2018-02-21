@@ -49,7 +49,7 @@ indent "Successfully extracted ${ORACLE_INSTANT_CLIENT_FILENAME}"
 ORACLE_HOME="${BUILD_DIR}/${ORACLE_INSTANT_CLIENT_DIR}"
 
 cd ${ORACLE_HOME}
-rm libclntsh.so
+#rm libclntsh.so
 ln -s libclntsh.so.12.1 libclntsh.so
 
 indent "Create oci8.pc"
